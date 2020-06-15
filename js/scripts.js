@@ -1,9 +1,20 @@
 ///// User Logic /////
 
+let vacation = new Vacation();
+
 $(document).ready(function() {
-  $('insertid').click(function(event) {
+  $('#nyClick').click(function(event) {
     event.preventDefault();
-  })
+
+  function displayPlaceDetails(vacationToDisplay) {
+  let vacationList = $("ul#places");
+  let htmlForPlaceInfo = "";
+  vacationToDisplay.places.forEach(function(place) {
+    htmlForPlaceInfo += "<li" + place.state + " " + place.landmark + " " + place.date + " " + place.note + "</li>";
+  });
+  vacationList.html(htmlForPlaceInfo);
+};
+})
 })
 
 ///// Business Logic /////
@@ -30,5 +41,4 @@ Vacation.prototype.addPlace = function(place) {
   this.places.push(place);
 };
 
-let vacation = new Vacation();
 
