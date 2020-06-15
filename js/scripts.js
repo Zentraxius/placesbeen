@@ -8,10 +8,10 @@ let lackland = new Place ("Texas", "Lackland Air Force Base", "August 4th, 2014"
 
 ///////
 
-function displayPlaceDetails(Vacation) {
+function displayPlaceDetails(vacationToDisplay) {
 let vacationList = $("ul#places");
 let htmlForPlaceInfo = "";
-Vacation.places.forEach(function(place) {
+vacationToDisplay.places.forEach(function(place) {
   htmlForPlaceInfo += "<li>" + place.state + " " + place.landmark + " " + place.date + " " + place.note + "</li>";
 });
 vacationList.html(htmlForPlaceInfo);
